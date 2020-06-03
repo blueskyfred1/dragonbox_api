@@ -10,5 +10,5 @@
 // +----------------------------------------------------------------------
 use think\Route;
 
-
+Route::get('product/:id', 'api/v1.Product/getProduct');
 
