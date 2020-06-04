@@ -8,8 +8,11 @@
 
 namespace app\api\controller\v1;
 
+use app\api\model\Product as ProductModel;
+
 
 use app\api\validate\IDMustBePositiveInt;
+use app\lib\exception\ProductMissException;
 
 class Product
 {
@@ -20,5 +23,10 @@ class Product
      */
     public function getProduct($id){
         (new IDMustBePositiveInt())->goCheck();
+        $product = ProductModel::getProductByID($id);
+        if (!$product){
+            throw new ProductMissException();
+        }
+        return $product;
     }
 }
