@@ -13,6 +13,7 @@ use app\api\model\Product as ProductModel;
 
 use app\api\validate\IDMustBePositiveInt;
 use app\lib\exception\ProductMissException;
+use think\Exception;
 
 class Product
 {
@@ -25,7 +26,8 @@ class Product
         (new IDMustBePositiveInt())->goCheck();
         $product = ProductModel::getProductByID($id);
         if (!$product){
-            throw new ProductMissException();
+//            throw new ProductMissException();
+            throw new Exception();
         }
         return $product;
     }
