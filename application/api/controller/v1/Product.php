@@ -24,7 +24,7 @@ class Product
      */
     public function getProduct($id){
         (new IDMustBePositiveInt())->goCheck();
-        $product = ProductModel::getProductByID($id);
+        $product = ProductModel::get($id);
         if (!$product){
             throw new ProductMissException();
         }

@@ -9,9 +9,9 @@
 namespace app\api\model;
 
 
-class Product
-{
-    public static function getProductByID($id){
+use think\Model;
 
-    }
+class Product extends Model
+{
+
 }
