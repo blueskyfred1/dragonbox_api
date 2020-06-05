@@ -11,7 +11,29 @@ namespace app\api\model;
 
 use think\Model;
 
-class Product extends Model
+class Product extends BaseModel
 {
+    /**
+     * @param $value  数据库中的URL
+     * @return string 获取产品主图完整URL
+     */
+    public function getMainImgUrlAttr($value){
+        return $this->prefixImagUrl($value);
+    }
 
+    public function getDetailImag1UrlAttr($value){
+        return $this->prefixImagUrl($value);
+    }
+
+    public function getDetailImag2UrlAttr($value){
+        return $this->prefixImagUrl($value);
+    }
+
+    public function getDetailImag3UrlAttr($value){
+        return $this->prefixImagUrl($value);
+    }
+
+    public function getDetailImag4UrlAttr($value){
+        return $this->prefixImagUrl($value);
+    }
 }
