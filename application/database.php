@@ -21,7 +21,7 @@ return [
     // 密码
     'password'        => 'rj43BwzcyeMFp6Lc',
     // 端口
-    'hostport'        => '888',
+    'hostport'        => '3306',
     // 连接dsn
     'dsn'             => '',
     // 数据库连接参数
@@ -43,11 +43,11 @@ return [
     // 是否严格检查字段是否存在
     'fields_strict'   => true,
     // 数据集返回类型
-    'resultset_type'  => 'array',
+    'resultset_type'  => 'collection',
     // 自动写入时间戳字段
     'auto_timestamp'  => false,
     // 时间字段取出后的默认时间格式
-    'datetime_format' => 'Y-m-d H:i:s',
+    'datetime_format' => false,
     // 是否需要进行SQL性能分析
     'sql_explain'     => false,
 ];
