@@ -13,6 +13,10 @@ use think\Model;
 
 class Product extends BaseModel
 {
+
+    public function imgs(){
+       return $this->hasMany('ProductImage','product_id','id');
+    }
     /**
      * @param $value  数据库中的URL
      * @return string 获取产品主图完整URL
@@ -35,5 +39,10 @@ class Product extends BaseModel
 
     public function getDetailImag4UrlAttr($value){
         return $this->prefixImagUrl($value);
+    }
+
+    public static function getProductDetail($id){
+        $product = self::with('imgs')->find($id);
+        return $product;
     }
 }
