@@ -10,6 +10,6 @@
 // +----------------------------------------------------------------------
 use think\Route;
 
-Route::get('api/:version/product/:id', 'api/:version.Product/getProduct');
+Route::get('api/:version/product/:id', 'api/:version.Product/getProduct',[],['id' => '\d+']);
 Route::post('api/:version/token/user', 'api/:version.Token/getToken');
 

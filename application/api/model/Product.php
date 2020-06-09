@@ -42,7 +42,7 @@ class Product extends BaseModel
     }
 
     public static function getProductDetail($id){
-        $product = self::with('imgs')->find($id);
+        $product = self::with(['imgs','imgs.imageUrl'])->find($id);
         return $product;
     }
 }
