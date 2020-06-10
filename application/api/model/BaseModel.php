@@ -13,7 +13,7 @@ use think\Model;
 
 class BaseModel extends Model
 {
-    protected function prefixImagUrl ($value){
+    protected function prefixImageUrl ($value){
         return config('setting.img_prefix').$value;
     }
 }

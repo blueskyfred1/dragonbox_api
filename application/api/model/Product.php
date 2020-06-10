@@ -22,27 +22,31 @@ class Product extends BaseModel
      * @return string 获取产品主图完整URL
      */
     public function getMainImgUrlAttr($value){
-        return $this->prefixImagUrl($value);
+        return $this->prefixImageUrl($value);
     }
 
-    public function getDetailImag1UrlAttr($value){
-        return $this->prefixImagUrl($value);
+    public function getDetailImg1UrlAttr($value){
+        return $this->prefixImageUrl($value);
     }
 
-    public function getDetailImag2UrlAttr($value){
-        return $this->prefixImagUrl($value);
+    public function getDetailImg2UrlAttr($value){
+        return $this->prefixImageUrl($value);
     }
 
-    public function getDetailImag3UrlAttr($value){
-        return $this->prefixImagUrl($value);
+    public function getDetailImg3UrlAttr($value){
+        return $this->prefixImageUrl($value);
     }
 
-    public function getDetailImag4UrlAttr($value){
-        return $this->prefixImagUrl($value);
+    public function getDetailImg4UrlAttr($value){
+        return $this->prefixImageUrl($value);
     }
 
     public static function getProductDetail($id){
-        $product = self::with(['imgs','imgs.imageUrl'])->find($id);
+        $product = self::with([
+            'imgs' => function($query){
+                $query->with('imageUrl')->order('sort','asc');
+            }
+        ])->find($id);
         return $product;
     }
 }

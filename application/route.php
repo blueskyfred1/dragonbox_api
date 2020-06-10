@@ -11,5 +11,9 @@
 use think\Route;
 
 Route::get('api/:version/product/:id', 'api/:version.Product/getProduct',[],['id' => '\d+']);
+Route::get('api/:version/product/all', 'api/:version.Product/getProductAll');
+
 Route::post('api/:version/token/user', 'api/:version.Token/getToken');
+
+Route::post('api/:version/address', 'api/:version.Address/createOrUpdateAddress');
 

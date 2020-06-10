@@ -30,4 +30,12 @@ class Product
         }
         return $product;
     }
+
+    public function getProductAll(){
+        $products = ProductModel::all([]);
+        if ($products->isEmpty()){
+            throw new ProductMissException();
+        }
+        return $products;
+    }
 }
