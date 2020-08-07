@@ -12,4 +12,7 @@ namespace app\api\model;
 class Image extends BaseModel
 {
 
+    public function getUrlAttr($value){
+        return $this->prefixImageUrl($value);
+    }
 }
