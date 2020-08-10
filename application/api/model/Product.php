@@ -14,6 +14,7 @@ use think\Model;
 class Product extends BaseModel
 {
 
+    protected $hidden = ['id','name','create_time','update_time','delete_time'];
     public function imgs(){
        return $this->hasMany('ProductImage','product_id','id');
     }
